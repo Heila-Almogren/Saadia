@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "Muli-ExtraLightItalic";
+    src: url("Muli-ExtraLightItalic.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Muli-Reg';
+    src: url("Muli.ttf") format("truetype");
+}
+
+body {
+  background-color: #1F305E;
+    font-family :"Muli-Reg";
+}
+
+h1{
+    color: white;
+    font-family: "Muli-Reg";
+    text-align: center;
+}
+div.center {
+    border-radius: 20px;
+    color: white;
+    font-family: "Muli-Reg";
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  width: 300px;
+  
+    background-color: #318CE7;
+  padding: 10px;
+ font-size: 20px;
+}
+
+td.active{
+    cursor: pointer;
+}
+
+td.active:hover{
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stop{
+    border-radius: 25px;
+    border: solid white;
+}
