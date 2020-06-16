@@ -1,2 +1,4 @@
-# Saadia_IoT
-Simple UI interace for controlling robot.
+# Saadia
+
+* Simple UI interace for controlling robot.
+* Tutorial for installing ROS.
