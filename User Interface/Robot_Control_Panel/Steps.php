@@ -23,7 +23,7 @@
             document.getElementById("up").parentNode.style.borderBottomColor = "red";
             
         }else{
-            alert("here")
+            
             var endx = 200 + Number(right) - Number(left);
         var endy = 400 + Number(down) - Number(up);
         
