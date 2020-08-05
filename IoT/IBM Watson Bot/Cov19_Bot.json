@@ -1,0 +1,430 @@
+{
+  "intents": [
+    {
+      "intent": "HowRU",
+      "examples": [
+        {
+          "text": "كيف حالك"
+        },
+        {
+          "text": "وش اخبارك"
+        },
+        {
+          "text": "كيف الحال"
+        },
+        {
+          "text": "شلونك"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Distribution",
+      "examples": [
+        {
+          "text": "يتنقل"
+        },
+        {
+          "text": "ينتشر"
+        },
+        {
+          "text": "ينتقل المرض"
+        },
+        {
+          "text": "ينقل"
+        },
+        {
+          "text": "ينتقل"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "time",
+      "examples": [
+        {
+          "text": "مدة أعراض"
+        },
+        {
+          "text": "كم يستمر"
+        },
+        {
+          "text": "المدة"
+        },
+        {
+          "text": "الوقت"
+        },
+        {
+          "text": "كم يوم"
+        },
+        {
+          "text": "يطول"
+        },
+        {
+          "text": "مدة"
+        },
+        {
+          "text": "وقت"
+        },
+        {
+          "text": "المدة الأعراض"
+        },
+        {
+          "text": "مدة الأعراض"
+        },
+        {
+          "text": "المدة أعراض"
+        },
+        {
+          "text": "تستمر"
+        },
+        {
+          "text": "يستمر"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Symptoms",
+      "examples": [
+        {
+          "text": "أعراض كورونا"
+        },
+        {
+          "text": "اعراضه"
+        },
+        {
+          "text": "وشي هي الأعراض"
+        },
+        {
+          "text": "أعراضه"
+        },
+        {
+          "text": "بسألك وش أعراض كورونا"
+        },
+        {
+          "text": "الأعراض"
+        },
+        {
+          "text": "الأعراض كورونا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Hello",
+      "examples": [
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        },
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "أهلين"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "أهلا"
+        },
+        {
+          "text": "اهلين"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Bye",
+      "examples": [
+        {
+          "text": "باي"
+        },
+        {
+          "text": "خلاص"
+        },
+        {
+          "text": "مشكور"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "يعطيك العافية"
+        },
+        {
+          "text": "تمام"
+        },
+        {
+          "text": "مع السلامة"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Number",
+      "examples": [
+        {
+          "text": "الإصابات"
+        },
+        {
+          "text": "الإصابات اليوم"
+        },
+        {
+          "text": "الاصابات اليوم"
+        },
+        {
+          "text": "عدد المصابين"
+        },
+        {
+          "text": "الاصابات"
+        },
+        {
+          "text": "عدد الإصابات"
+        },
+        {
+          "text": "عدد الاصابات"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "إلى اللقاء",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مع السلامة.. في حفظ الله"
+              },
+              {
+                "text": "إلى اللقاء! في حفظ الله"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Bye",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_10_1596580753907",
+      "previous_sibling": "node_1_1596583743357"
+    },
+    {
+      "type": "standard",
+      "title": "كيف ينتقل المرض",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ينتقل المرض عن طريق قطيرات اللعاب اللي يفرزها شخص مصاب عن طريق العطاس أو الكحة أو الكلام وهذي القطيرات ممكن تستقر على الأسطح وتنقل لما شخص يلمس هذا السطح وبعدها ينقلها بلمس فمه أو أنفه "
+              },
+              {
+                "text": "عشان كذا نقول حافظوا على المسافة الآمنة ولا تلمسون الأنف أو الفم بدون ما تكونون متأكدين من تعقيمها ونظافتها"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Distribution",
+      "dialog_node": "node_1_1596583743357",
+      "previous_sibling": "node_1_1596584403120"
+    },
+    {
+      "type": "standard",
+      "title": "أهلا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أهلا أهلا، كيف أساعدك؟"
+              },
+              {
+                "text": "أهلين هلا والله! كيف أساعدك؟"
+              },
+              {
+                "text": "يا هلا.. كيف أقدر أساعدك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Hello",
+      "dialog_node": "Welcome",
+      "previous_sibling": "node_5_1596580132868"
+    },
+    {
+      "type": "standard",
+      "title": "عدد الإصابات",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "تقدر تتطلع على آخر الإحصائيات من خلال صفحة فيروس كورونا المستجد على موقع وزارة الصحة "
+              },
+              {
+                "text": "https://covid19.moh.gov.sa/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Number",
+      "dialog_node": "node_1_1596584403120",
+      "previous_sibling": "node_8_1596586885698"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أهلا وسهلا"
+              },
+              {
+                "text": "ما فهمت ولا حرف للأسف.. حاول تتكلم بشكل أوضح"
+              },
+              {
+                "text": "أنا مجرد بوت وما أفهم الكلام المعقد.. حاول تتكلم بشكل أبسط معي لو سمحت."
+              },
+              {
+                "text": "آسف.. ما فهمت"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "Welcome",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مدة المرض",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هو غالبا يستمر ما بين خمسة وستة أيام"
+              },
+              {
+                "text": "لكن ترا ممكن يستمر ١٤ يوم"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#time",
+      "dialog_node": "node_4_1596580592159",
+      "previous_sibling": "node_10_1596580753907"
+    },
+    {
+      "type": "standard",
+      "title": "أعراض المرض",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أهم أعراض كورونا هي الكحة والحرارة والشعور بالتعب.. اذا حسيت بأي من هذي الأعراض لا تتردد بالاتصال على 937"
+              },
+              {
+                "text": "ممكن تكون الأعراض أيضا شعور بالألم في الحلق وإسهال وصداع"
+              },
+              {
+                "text": "وبعد ممكن يظهر طفح جلدي وأصابع اليد والقدم لونها يبهت"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Symptoms",
+      "dialog_node": "node_5_1596580132868",
+      "previous_sibling": "node_4_1596580592159"
+    },
+    {
+      "type": "standard",
+      "title": "كيف حالك",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "الحمد لله بخير، كيف أساعدك؟"
+              },
+              {
+                "text": "الحمد لله تمام، كيف أساعدك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#HowRU",
+      "dialog_node": "node_8_1596586885698"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My first skill",
+  "language": "en",
+  "description": ""
+}
