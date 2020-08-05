@@ -1,0 +1,29 @@
+import React from 'react';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { WebView } from 'react-native-webview';
+
+const styles = StyleSheet.create({
+  center: {
+    alignItems: 'center'
+  }
+})
+
+function Greeting() {
+  return (
+    <View>
+     <WebView
+        source={{uri: 'http://127.0.0.1:8080/Robot_Control_Panel/Panel.php'}}
+        style = {{ width: Dimensions.get("screen").width }}
+      />
+    </View>
+  );
+}
+
+function mainpage() {
+  return (
+    <View style={[styles.center]}>
+      <Greeting/>
+    </View>
+  );
+}
+export default mainpage;
